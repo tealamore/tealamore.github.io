@@ -11,7 +11,7 @@ As part of ES6, regular expressions now have the u (unicode) flag. In the past w
     <p> Remember `\u` is different from the u-flag. </p> 
 </div> 
 
-Let's start off with what exactly is unicode and how it works in javascript. TODOD: 
+Let's start off with what exactly is unicode and how it works in javascript. TODO: 
 
 Now that we have somewhat of a good understanding of unicode, let's play with regular expressions and see how the u-flag helps us. 
 
