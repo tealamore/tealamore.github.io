@@ -6,8 +6,6 @@ description: This is a test
 
 As part of ES6, regular expressions now have the u (unicode) flag. In the past week, I've been trying to understand what the whole purpose of this flag is for. I'm hoping that this post will be helpful to those who are struggling to understand unicode with javascript regular expressions. 
 
-To avoid pasting in characters that can't easily be displayed, I'll only be using `\u` notation. Remember `\u` is different from the u-flag (`/u`). 
-
 Let's start off with what exactly is unicode and how it works in javascript. TODO: 
 
 Now that we have somewhat of a good understanding of unicode, let's play with regular expressions and see how the u-flag helps us:  
@@ -72,14 +70,8 @@ console.log(/a(..)a/.exec(string)[1] === '\u{6F342}'); // -> true
 There are more things that the u-flag provides us, but this post hopefully helps in understanding some of the basics of the u-flag. 
 
 
+This is just a test to see how this renders:
 
-
-TODO: talk about Unicode code points/UTF-16 code units. Also UTF translates to 1 char, while unicode is 1-2 chars. Note that unicode is represented as 1-2 BMP characters and that `.` without /u just matches BMP characters
-
-I was reading this article about the unicode flag for regex. The article says that without the u-flag, `.` only matches the BMP characters, which is all characters between \u{0} to \u{FFFF}.
-
-In the article, it shows that /a.b/.test('a\u{1D306}b') returns false, while /a.b/u.test('a\u{1D306}b') returns true. However, both /a./ and /.b/ match 'a\u{1D306}b'. I don't really understand what the u-flag helps us do.
-
-That's really interesting. So in the example they showed in the article /a.b/.test('a\u{1D306}b'), that failed because \u{1D306} is actually 2 characters/code units. When the regex is /a..b/, it returns true.
-
- 
+```javascript
+/a.a/gim
+```
