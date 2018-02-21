@@ -73,5 +73,5 @@ There are more things that the u-flag provides us, but this post hopefully helps
 This is just a test to see how this renders:
 
 ```javascript
-/a.a/gim
+console.log(/a.a/gim.exec(string));
 ```
