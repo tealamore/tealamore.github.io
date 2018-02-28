@@ -51,7 +51,7 @@ If those aren't displaying well for you, it's ok. They don't display well for me
 ```javascript
 console.log(/a(.)/.exec(string)[1] === '\u{6F342}'); // -> false
 
-console.log(/a(.)/u.exec(string)[1] === '\u{6F342}'); // -> true
+console.log(/a(.)/<span class="sr">u</span>.exec(string)[1] === '\u{6F342}'); // -> true
 
 console.log(/a(.)/.exec(string)[1] === '\u{6F342}'[0]); // -> true
 ```
@@ -68,10 +68,3 @@ console.log(/a(..)a/.exec(string)[1] === '\u{6F342}'); // -> true
 ```
 
 There are more things that the u-flag provides us, but this post hopefully helps in understanding some of the basics of the u-flag. 
-
-
-This is just a test to see how this renders:
-
-```javascript
-console.log(/a.a/gim.exec(string));
-```
