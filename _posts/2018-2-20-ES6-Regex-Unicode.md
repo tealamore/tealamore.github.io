@@ -51,7 +51,7 @@ If those aren't displaying well for you, it's ok. They don't display well for me
 ```javascript
 console.log(/a(.)/.exec(string)[1] === '\u{6F342}'); // -> false
 
-console.log(/a(.)/<span class="sr">u</span>.exec(string)[1] === '\u{6F342}'); // -> true
+console.log(/a(.)/u.exec(string)[1] === '\u{6F342}'); // -> true
 
 console.log(/a(.)/.exec(string)[1] === '\u{6F342}'[0]); // -> true
 ```
