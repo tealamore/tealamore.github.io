@@ -1,12 +1,22 @@
 ---
 layout: regex
 title: ES6 + regex + unicode = 💕
-description: This is a test
 ---
 
 As part of ES6, regular expressions now have the u (unicode) flag. In the past week, I've been trying to understand what the whole purpose of this flag is for. I'm hoping that this post will be helpful to those who are struggling to understand unicode with javascript regular expressions. 
 
-Let's start off with what exactly is unicode and how it works in javascript. TODO: 
+Let's start off with a little bit about unicode and how it works in javascript.
+
+<div id='unicodeIntro' class='infoBox'>
+    <p> basic info </p>
+    <p class='expanderLink' 
+       onclick='expando("unicodeIntro", "detailedUnicodeIntro")'> 
+       click here 
+    </p>
+</div>
+<div id='detailedUnicodeIntro' class='invisible infoBox'>
+    <p> way more detailed info </p>
+</div>
 
 Now that we have somewhat of a good understanding of unicode, let's play with regular expressions and see how the u-flag helps us:  
 
@@ -36,7 +46,7 @@ console.log(/a./u.test(string)); // -> true
 console.log(/a.a/u.test(string)); // -> true
 ``` 
 
-If you're anything like me, it is not obvious at all why the first test worked. It would make sense that that line fails. Yet it doesn't, so let's go a bit deeper and figure out what is going on here:
+If you're anything like me, it is not obvious at all why the first test passed. It would make sense that that line fails. Yet it doesn't, so let's go a bit deeper and figure out what is going on here
 
 ```javascript
 const string = 'a\u{6F342}a';
