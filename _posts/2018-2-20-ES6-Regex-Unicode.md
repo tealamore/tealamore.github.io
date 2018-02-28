@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: regex
 title: ES6 + regex + unicode = 💕
 description: This is a test
 ---
