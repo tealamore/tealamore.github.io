@@ -84,7 +84,9 @@ code {
 .highlight .il { color: #2AA198 } /* Literal.Number.Integer.Long */
 
 .expanderLink {
-  color: #4183C4;
+  text-decoration: underline;
+  display: inline;
+  margin: 0
 }
 
 .invisible {
@@ -96,6 +98,6 @@ code {
   background-color: #efefef;
   padding: 7px 7px 7px 10px;
   border: 1px solid #ddd;
-  margin: -3px 0 -10px 0;
+  margin: 7px 0 0 0;
   border-radius: 4px;
 }
