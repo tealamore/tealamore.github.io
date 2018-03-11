@@ -4,9 +4,9 @@ title: ES6 + regex + unicode = 💕
 headsup: Just so you know, clicking underlined text will display more information 
 ---
 
-As part of ES6, regular expressions now have the u (unicode) flag. In the past week, I've been trying to understand what the whole purpose of this flag is for. I'm hoping that this post will be helpful to those who are struggling to understand unicode with javascript regular expressions. 
+As part of ES6, regular expressions now have the u (unicode) flag. In the past week, I've been trying to understand what the whole purpose of this flag is for. I'm hoping that this post will be helpful to those who are struggling to understand unicode with javascript regular expressions.
 
-Let's play with regular expressions and see how the u-flag helps us:  
+Let's play with regular expressions and see how the u-flag helps us:
 
 ```javascript
 const string = 'a\u{21}a';
@@ -19,25 +19,25 @@ console.log(/a.a/u.test(string)); // -> true
 ```
 
 <div>
-    You might have expected that we didn't really need the unicode flag here since 
+    You might have expected that we didn't really need the unicode flag here since
     <div class='expanderLink' onclick='expandoLink("unicodeHexExplanation")'>
         <code class='highlighter-rouge'>\u{21}</code>
-        is an ascii character 
+        is an ascii character
         <code class='highlighter-rouge'>(!)</code>
     </div>
-    as we saw in the print out from the second line. However, if you didn't guess that, that's also ok! 
+    as we saw in the print out from the second line. However, if you didn't guess that, that's also ok!
 </div>
 
 <div id='unicodeHexExplanation' class='invisible'>
-    I've made this mistake numerous times where I look at the 21 in 
+    I've made this mistake numerous times where I look at the 21 in
     <code class='highlighter-rouge'>\u{21}</code>
     and assumed that would the 21st character. If you were to look at an ascii table, you'd see that 21 represents the negative acknowledge (don't ask me what that is). When you're reading these numbers, you need to remember that they're in hexadecimal.
-    I actually almost posted on Stack Overflow to ask why 
+    I actually almost posted on Stack Overflow to ask why
     <code class='highlighter-rouge'>\uFFFF</code>
-    wasn't the same character as 
+    wasn't the same character as
     <code class='highlighter-rouge'>\u{65536}</code>.
-    So if you make this mistake, just know that you're not alone. 
-</div> 
+    So if you make this mistake, just know that you're not alone.
+</div>
 
 Here's an example where we test against a non-ascii character:
 
@@ -51,7 +51,7 @@ console.log(/a.a/.test(string)); // -> false
 console.log(/a./u.test(string)); // -> true
 
 console.log(/a.a/u.test(string)); // -> true
-``` 
+```
 
 If you're anything like me, it is not obvious at all why the first test passed. It would make sense that that line fails. Yet it doesn't, so let's go a bit deeper and figure out what is going on here:
 
@@ -73,7 +73,7 @@ console.log(/a(.)/u.exec(string)[1] === '\u{6F342}'); // -> true
 console.log(/a(.)/.exec(string)[1] === '\u{6F342}'[0]); // -> true
 ```
 
-I'm choosing to save us both a ton of time and headache and just tell you what is happening here. In javascript depending on what unicode character you use, the character is represented as 1 or 2 characters between `\u{0}` and `\u{FFFF}`. Characters greater than `{FFFF}` are stored as two smaller characters in the range I just listed. 
+I'm choosing to save us both a ton of time and headache and just tell you what is happening here. In javascript depending on what unicode character you use, the character is represented as 1 or 2 characters between `\u{0}` and `\u{FFFF}`. Characters greater than `{FFFF}` are stored as two smaller characters in the range I just listed.
 
 Given that bit of information, you might be able to see that the `.` with the u-flag is matching the whole unicode character, while the `.` without the u-flag is only matching the first of two characters that represents the unicode character.
 
@@ -83,4 +83,4 @@ If we wanted to still avoid the u-flag and only match when the character between
 console.log(/a(..)a/.exec(string)[1] === '\u{6F342}'); // -> true
 ```
 
-There are more things that the u-flag provides us, but this post hopefully helps in understanding some of the basics of the u-flag. 
+There are more things that the u-flag provides us, but this post hopefully helps in understanding some of the basics of the u-flag.
