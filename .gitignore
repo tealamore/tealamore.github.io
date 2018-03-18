@@ -10,4 +10,4 @@ node_modules
 package.json
 *.xml
 *.iml
-notes.ignored
+*ignored*
