@@ -22,13 +22,14 @@ footer-links:
   linkedin: bradley-arvin
   twitter: BradleyArvin
   stackoverflow: users/962178/brad
+  rss: https://bradarv90.github.io
 
 # Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking
 google_analytics: UA-53241957-1
 
 # Your website URL (e.g. http://barryclark.github.io or http://www.barryclark.co)
 # Used for Sitemap.xml and your RSS feed
-url: bradarv90.github.io
+url: https://bradarv90.github.io
 
 #
 # !! You don't need to change any of the configuration flags below !!
