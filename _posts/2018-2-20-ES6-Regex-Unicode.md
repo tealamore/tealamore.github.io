@@ -32,10 +32,13 @@ console.log(/a.a/u.test(string)); // -> true
     I've made this mistake numerous times where I look at the 21 in
     <code class='highlighter-rouge'>\u{21}</code>
     and assumed that would the 21st character. If you were to look at an ascii table, you'd see that 21 represents the negative acknowledge (don't ask me what that is). When you're reading these numbers, you need to remember that they're in hexadecimal.
+    If you convert 21 from hexidecimal to decimal, you'll get 33, which is then <code class='highlighter-rouge'>(!)</code>.
+    <br />
+    <br />
     I actually almost posted on Stack Overflow to ask why
     <code class='highlighter-rouge'>\uFFFF</code>
     wasn't the same character as
-    <code class='highlighter-rouge'>\u{65536}</code>.
+    <code class='highlighter-rouge'>\u{65535}</code>.
     So if you make this mistake, just know that you're not alone.
 </div>
 
