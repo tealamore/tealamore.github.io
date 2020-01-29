@@ -10,21 +10,13 @@
     <![endif]-->
 
     <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?">
-    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
+
+    <link rel="preload" href="{{ site.baseurl }}/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'" >
+    <noscript> <link rel="stylesheet" href="{{ site.baseurl }}/style.css" /> </noscript>
+
     <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
     <link rel="alternate" hreflang="en" href="https://bradarv90.github.io/"/>
-    <script src="{{ site.baseurl }}/expander.js"></script>
-
-    <!-- Reddit Conversion Pixel -->
-    <script>
-        var i=new Image();i.src="https://alb.reddit.com/snoo.gif?q=CAAHAAABAAoACQAAABKq1P0_AA==&s=rstd4w4dUg4bfd8DFomWsFj4u2SnuNhshyQJZIU2zY0=";
-    </script>
-    <noscript>
-      <img height="1" width="1" style="display:none"
-      src="https://alb.reddit.com/snoo.gif?q=CAAHAAABAAoACQAAABKq1P0_AA==&s=rstd4w4dUg4bfd8DFomWsFj4u2SnuNhshyQJZIU2zY0="/>
-    </noscript>
-    <!-- DO NOT MODIFY -->
-    <!-- End Reddit Conversion Pixel -->
+    <script defer src="{{ site.baseurl }}/expander.js"></script>
 
     <!-- Facebook Pixel Code -->
     <script>
