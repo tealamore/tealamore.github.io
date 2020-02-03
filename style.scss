@@ -18,8 +18,8 @@ html {
 }
 
 body {
-	background: $white;
-  font: 18px/1.4 $helvetica;
+  background: $white;
+  font: 22px/1.4 $helvetica;
   color: $darkGray;
 }
 
@@ -45,7 +45,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 30px;
+  font-size: 34px;
   a {
     color: inherit;
   }
@@ -267,7 +267,7 @@ nav {
 
   .read-more {
     text-transform: uppercase;
-    font-size: 18px;
+    font-size: 20px;
   }
 }
 
