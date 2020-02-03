@@ -3,7 +3,7 @@ layout: regex
 title: Let's get sticky with it
 ---
 
-We're back for round two of regular expressions in javascript. If you haven't see my post already about unicode mixed with regular expressions, [you should check it out](https://bradarv90.github.io/ES6-Regex-Unicode/). I thought it was really interesting, but I guess you don't have to like it if you really don't want to. In this post, we'll be discussing the sticky flag (y), which was also introduced in ES6.
+We're back for round two of regular expressions in javascript. If you haven't see my post already about unicode mixed with regular expressions, [you should check it out](https://www.bradarvin.com/ES6-Regex-Unicode/). I thought it was really interesting, but I guess you don't have to like it if you really don't want to. In this post, we'll be discussing the sticky flag (y), which was also introduced in ES6.
 
 ### How it works
 
