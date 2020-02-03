@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-As you can see from the bar above, my name is Brad. I am a full-stack software engineer at Kroger.
+As you can see from the bar above, my name is Brad. I am a full-stack consultant.
 
 ### Contact me
 
