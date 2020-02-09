@@ -5,7 +5,7 @@ title: Let's get sticky with it
 
 We're back for round two of regular expressions in javascript. If you haven't see my post already about using [regular expressions with unicode in ES6](https://www.bradarvin.com/ES6-Regex-Unicode/), you should check it out. I thought it was really interesting, but I guess you don't have to like it if you really don't want to. In this post, we'll be discussing the sticky flag (y), which was also introduced in ES6.
 
-### How it works
+## How it works
 
 Unlike other regular expressions, ones with the sticky flag check only at one specific spot. For example,
 
@@ -28,7 +28,7 @@ stickyRegex.lastIndex = 1;
 'ba'.match(stickyRegex); // -> [ 'a', index: 1, input: 'ba' ]
 ```
 
-#### Edge case(s)
+### Edge case(s)
 
 With sticky regexes, there are some catches that you must be aware of. Other blogs say these cases are obvious, but frankly I didn't expect it. A sticky regex with a `^` will always fail unless `lastIndex = 0` and the pattern starts at the beginning of the input string.
 
@@ -52,7 +52,7 @@ regex.lastIndex = 2;
 
 Other than that, the sticky flag behaves in a fairly logical way.
 
-### Example usage
+## Example usage
 
 This seems all fine and dandy, but why would anyone ever want to use this? It seems like a lot of headache for no real gain.
 
@@ -132,7 +132,7 @@ testStringFail.match(ifRegex); // -> null
 
 you should just use the sticky flag since it's much easier.
 
-### Native solutions suck
+## Native solutions suck
 
 Just like last time, let's discuss how we can build our own functionality, because reasons! To start off, let's really think about what the sticky flag provides us. As we've seen above, using the sticky flag, we attempt to match based strictly on where our lastIndex is set to. Here's another example of this:
 
@@ -146,8 +146,9 @@ A non-generalized way that sort of this same regex without using stickiness woul
 
 ```javascript
 const regex = /^....(bc)/;
-var result = 'abcabc'.match(regex);
+let result = 'abcabc'.match(regex);
 console.log(result); // -> [ 'abcabc', 'bc', index: 0, input: 'abcabc' ]
+
 result.splice(0, 1);
 result.index = 4;
 console.log(result); // -> [ 'bc', index: 4, input: 'abcabc' ]
@@ -156,16 +157,19 @@ console.log(result); // -> [ 'bc', index: 4, input: 'abcabc' ]
 And now let's create a good-enough generalized solution:
 
 ```javascript
-fakeSticky = (pattern, testString, flags='', pos=0) => {
+fakeSticky = (pattern, testString, flags = '', pos = 0) => {
     // for the example above,
     // this will build the pattern ^.{4}(bc)
     const newPattern = '^.{' + pos + '}(' + pattern.source + ')';
     const regex = new RegExp(newPattern, flags);
+    
     const result = testString.match(regex);
+    
     if (result !== null) {
         result.splice(0, 1);
         result.index = pos;
     }
+    
     return result;
 }
 ```
@@ -176,11 +180,4 @@ Here are some example usages:
 fakeSticky(/bc/, 'abcabc', '', 1) // -> [ 'bc', index: 1, input: 'abcabc' ]
 fakeSticky(/bc/, 'abcabc', '', 3) // -> null
 fakeSticky(/bc/, 'abcabc', '', 4) // -> [ 'bc', index: 4, input: 'abcabc' ]
-```
-
-I'm pretty sure there is at least one case where the above function doesn't behave properly, but I can't quite seem to find one. Also something I learned by trying to get it to fail:
-
-```javascript
-/^^a/.test('a') // -> true
-/^.^a/.test('a') // -> false
 ```
