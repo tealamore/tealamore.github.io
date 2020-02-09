@@ -11,11 +11,14 @@ Let's play with regular expressions and see how the u-flag helps us:
 ```javascript
 const string = 'a\u{21}a';
 
-console.log(string); // -> 'a!a'
+string; 
+    // -> 'a!a'
 
-console.log(/a.a/.test(string)); // -> true
+/a.a/.test(string); 
+    // -> true
 
-console.log(/a.a/u.test(string)); // -> true
+/a.a/u.test(string); 
+    // -> true
 ```
 
 <div>
@@ -47,13 +50,17 @@ Here's an example where we test against a non-ascii character:
 ```javascript
 const string = 'a\u{6F342}a';
 
-console.log(/a./.test(string)); // -> true
+/a./.test(string); 
+    // -> true
 
-console.log(/a.a/.test(string)); // -> false
+/a.a/.test(string); 
+    // -> false
 
-console.log(/a./u.test(string)); // -> true
+/a./u.test(string); 
+    // -> true
 
-console.log(/a.a/u.test(string)); // -> true
+/a.a/u.test(string); 
+    // -> true
 ```
 
 If you're anything like me, it is not obvious at all why the first test passed. It would make sense that that line fails. Yet it doesn't, so let's go a bit deeper and figure out what is going on here:
@@ -61,19 +68,24 @@ If you're anything like me, it is not obvious at all why the first test passed. 
 ```javascript
 const string = 'a\u{6F342}a';
 
-console.log(/a(.)/.exec(string)); // -> [ 'a�', '�', index: 0, input: 'a񯍂a' ]
+/a(.)/.exec(string); 
+    // -> [ 'a�', '�', index: 0, input: 'a񯍂a' ]
 
-console.log(/a(.)/u.exec(string)); // -> [ 'a񯍂', '񯍂', index: 0, input: 'a񯍂a' ]
+/a(.)/u.exec(string); 
+    // -> [ 'a񯍂', '񯍂', index: 0, input: 'a񯍂a' ]
 ```
 
 If those aren't displaying well for you, it's ok. They don't display well for me either. Let's see what our capturing groups grabbed:
 
 ```javascript
-console.log(/a(.)/.exec(string)[1] === '\u{6F342}'); // -> false
+/a(.)/.exec(string)[1] === '\u{6F342}'; 
+    // -> false
 
-console.log(/a(.)/u.exec(string)[1] === '\u{6F342}'); // -> true
+/a(.)/u.exec(string)[1] === '\u{6F342}'; 
+    // -> true
 
-console.log(/a(.)/.exec(string)[1] === '\u{6F342}'[0]); // -> true
+/a(.)/.exec(string)[1] === '\u{6F342}'[0]; 
+    // -> true
 ```
 
 I'm choosing to save us both a ton of time and headache and just tell you what is happening here. In javascript depending on what unicode character you use, the character is represented as 1 or 2 characters between `\u{0}` and `\u{FFFF}`. Characters greater than `{FFFF}` are stored as two smaller characters in the range I just listed.
@@ -83,7 +95,8 @@ Given that bit of information, you might be able to see that the `.` with the u-
 If we wanted to still avoid the u-flag and only match when the character between the two a's has a value greater than `FFFF`, we could this (though I really recommend using the u-flag):
 
 ```javascript
-console.log(/a(..)a/.exec(string)[1] === '\u{6F342}'); // -> true
+/a(..)a/.exec(string)[1] === '\u{6F342}'; 
+    // -> true
 ```
 
 There are more things that the u-flag provides us, but this post hopefully helps in understanding some of the basics of the u-flag.
