@@ -48,7 +48,7 @@ string;
 Here's an example where we test against a non-ascii character:
 
 ```javascript
-const string = 'a\u{6F342}a';
+const string = 'a\u{1F495}a';
 
 /a./.test(string); 
     // -> true
@@ -66,25 +66,25 @@ const string = 'a\u{6F342}a';
 If you're anything like me, it is not obvious at all why the first test passed. It would make sense that that line fails. Yet it doesn't, so let's go a bit deeper and figure out what is going on here:
 
 ```javascript
-const string = 'a\u{6F342}a';
+const string = 'a\u{1F495}a';
 
 /a(.)/.exec(string); 
-    // -> [ 'a�', '�', index: 0, input: 'a񯍂a' ]
+    // -> [ 'a�', '�', index: 0, input: 'a💕a', groups: undefined ]
 
 /a(.)/u.exec(string); 
-    // -> [ 'a񯍂', '񯍂', index: 0, input: 'a񯍂a' ]
+    // -> [ 'a💕', '💕', index: 0, input: 'a💕a', groups: undefined ]
 ```
 
 If those aren't displaying well for you, it's ok. They don't display well for me either. Let's see what our capturing groups grabbed:
 
 ```javascript
-/a(.)/.exec(string)[1] === '\u{6F342}'; 
+/a(.)/.exec(string)[1] === '\u{1F495}'; 
     // -> false
 
-/a(.)/u.exec(string)[1] === '\u{6F342}'; 
+/a(.)/u.exec(string)[1] === '\u{1F495}'; 
     // -> true
 
-/a(.)/.exec(string)[1] === '\u{6F342}'[0]; 
+/a(.)/.exec(string)[1] === '\u{1F495}'[0]; 
     // -> true
 ```
 
@@ -95,7 +95,7 @@ Given that bit of information, you might be able to see that the `.` with the u-
 If we wanted to still avoid the u-flag and only match when the character between the two a's has a value greater than `FFFF`, we could this (though I really recommend using the u-flag):
 
 ```javascript
-/a(..)a/.exec(string)[1] === '\u{6F342}'; 
+/a(..)a/.exec(string)[1] === '\u{1F495}'; 
     // -> true
 ```
 
