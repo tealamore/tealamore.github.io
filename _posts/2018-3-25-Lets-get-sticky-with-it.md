@@ -1,6 +1,7 @@
 ---
 layout: regex
 title: Let's get sticky with it
+excerpt: Round two of ES6 flags for regexes in javascript. How to use the sticky flag and what are some use cases?
 ---
 
 We're back for round two of regular expressions in javascript. If you haven't see my post already about using [regular expressions with unicode in ES6](https://www.bradarvin.com/ES6-Regex-Unicode/), you should check it out. I thought it was really interesting, but I guess you don't have to like it if you really don't want to. In this post, we'll be discussing the sticky flag (y), which was also introduced in ES6.
