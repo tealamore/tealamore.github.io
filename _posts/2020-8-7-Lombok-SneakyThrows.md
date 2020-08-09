@@ -30,14 +30,14 @@ public void doSomething() {
 }
 
 @SneakyThrows
-public void doSomething() {
+public void doSomethingSneakily() {
     readFile();
 }
 ```
 
 ## How does it work under the hood?
 
-Java 8 introduced a new rule related to type inferences. When a function says that it `throws E`, the type `E` is inferred to be a `RuntimeException`. `@SneakyThrows` uses this. Their code looks similar to something like 
+Java 8 introduced a new rule related to type inferences. When a function says that it `throws E`, the type `E` is inferred to be a `RuntimeException`, which means it's assumed to be an unchecked exception. `@SneakyThrows` uses this rule. Their implementation would be similar to something like this 
 
 ```java
 public RuntimeException sneakyThrow(Throwable t) {
@@ -69,7 +69,7 @@ public interface Processor {
 }
 ```
 
-and a `FileProcessor` class. This is how we'd handle the checked exception without a `@SneakyThrows`
+and a `FileProcessor` class which implements `Processor`. This is how we'd handle the checked exception without a `@SneakyThrows`
 
 ```java 
 public class FileProcessor implements Processor {
@@ -83,7 +83,8 @@ public class FileProcessor implements Processor {
     }
 
     private void doesSomething() throws IOException {
-        new File("").getCanonicalPath();
+        File file = new File("");
+        throw new IOException();
     }
 }
 ```
@@ -99,16 +100,17 @@ public class FileProcessor implements Processor {
     }
 
     private void doesSomething() throws IOException {
-        new File("").getCanonicalPath();
+        File file = new File("");
+        throw new IOException();
     }
 }
 ```
 
-It is quite a bit cleaner that way and as we'll cover later on, using the `@SneakyThrows` would allow us to catch the `IOException` elsewhere in our service. 
+It is quite a bit cleaner that way and as we'll cover later on, using the `@SneakyThrows` would allow us to catch the `IOException` elsewhere in our service instead of just swallowing the exception.
 
 ## So what's the Catch?
 
-Because of how java works, we cannot have a catch block that catches a checked exception that isn't thrown by the method we're calling. 
+Because of how java works, we cannot have a catch block that catches a checked exception that a method doesn't say it might throw. Sorry for all the negatives in a row there.  
 
 For example, if we do
 
@@ -121,7 +123,7 @@ public File readFileButSneakilyThrow() {
 
 public void doSomething() {
     try {
-        something();
+        readFileButSneakilyThrow();
     } catch (IOException e) {
         e.printStackTrace();
     }
@@ -155,7 +157,7 @@ public void doSomething() {
 }
 ```
 
-Do note that Intellij got real mad and said it was impossible for `e` to be of type `IOException`, so you'll always have to deal with those warnings yelling at you if you do it this way.
+Do note that Intellij got real mad and said it was impossible for `e` to be of type `IOException`, so you'll always have to deal with those warnings yelling at you if you do it this way. Also, in order to know to catch that specific type, you'd probably have to document that that method could throw that exception and thus I'll refer you to my previous point about who actually reads the docs.
 
 ---
 
