@@ -1,8 +1,11 @@
 ---
-layout: regex
+layout: post
 title: ES6 + regex + unicode = 💕
 headsup: Just so you know, clicking underlined text will display more information 
 excerpt: Let's explore how to use the new unicode flag for regular expressions that was introduced in ES6 of javascript.
+cover-img: /assets/img/unicode.jpg
+share-img: /assets/img/unicode.jpg
+tags: [javascript, ES6, regex]
 ---
 
 As part of ES6, regular expressions now have the u (unicode) flag. In the past week, I've been trying to understand what the whole purpose of this flag is for. I'm hoping that this post will be helpful to those who are struggling to understand unicode with javascript regular expressions.

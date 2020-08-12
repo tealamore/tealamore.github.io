@@ -1,83 +1,9 @@
-<!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <title>{% if page.title %}
-            {{ page.title }}
-           {% else %}
-            {{ site.name }} – {{ site.description }}
-           {% endif %}
-    </title>
+---
+layout: base
+---
 
-    {% include meta.html %}
+<div class="intro-header"></div>
 
-    <!--[if lt IE 9]>
-      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
-    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?">
-
-    <link rel="preload" href="{{ site.baseurl }}/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'" >
-    <link rel="stylesheet" href="{{ site.baseurl }}/style.css">
-    <noscript> <link rel="stylesheet" href="{{ site.baseurl }}/style.css" /> </noscript>
-
-    <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
-    <link rel="alternate" hreflang="en" href="https://bradarv90.github.io/"/>
-    <script defer src="{{ site.baseurl }}/expander.js"></script>
-
-    <!-- Facebook Pixel Code -->
-    <script>
-      !function(f,b,e,v,n,t,s)
-      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-              n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-        n.queue=[];t=b.createElement(e);t.async=!0;
-        t.src=v;s=b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t,s)}(window,document,'script',
-              'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', '2229538027324813');
-      fbq('track', 'PageView');
-    </script>
-    <noscript>
-      <img height="1" width="1"
-           src="https://www.facebook.com/tr?id=2229538027324813&ev=PageView
-&noscript=1"/>
-    </noscript>
-    <!-- End Facebook Pixel Code -->
-
-    <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
-  </head>
-
-  <body>
-    <div class="wrapper-masthead">
-      <div class="container">
-        <header class="masthead clearfix">
-          <a href="{{ site.baseurl }}/" class="site-avatar"><img alt="Brad Arvin logo" src="{{ site.avatar }}" /></a>
-
-          <div class="site-info">
-            <p class="site-name"><a href="{{ site.baseurl }}/">{{ site.name }}</a></p>
-            <p class="site-description">{{ site.description }}</p>
-          </div>
-
-          <nav>
-            <a href="{{ site.baseurl }}/">Blog</a>
-            <a href="{{ site.baseurl }}/about/">About</a>
-          </nav>
-        </header>
-      </div>
-    </div>
-
-    <div id="main" role="main" class="container">
-      {{ content }}
-    </div>
-
-    <div class="wrapper-footer">
-      <div class="container">
-        <footer class="footer">
-          {% include svg-icons.html %}
-        </footer>
-      </div>
-    </div>
-
-    {% include analytics.html %}
-  </body>
-</html>
+<div role="main" class="container-md">
+  {{ content }}
+</div>

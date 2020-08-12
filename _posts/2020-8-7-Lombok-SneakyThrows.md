@@ -2,6 +2,9 @@
 layout: post
 title: Lombok's @SneakyThrows - When and why it should be used
 excerpt: Let's discuss how to use checked exceptions, when checked exceptions get in the way of us working, and how we can utilize Lombok's @SneakyThrows to handle checked exceptions.
+cover-img: /assets/img/hhh13-tEMU4lzAL0w-unsplash.jpg
+share-img: /assets/img/hhh13-tEMU4lzAL0w-unsplash.jpg
+tags: [java, lombok, exceptions]
 ---
 
 `@SneakyThrows` is a nifty annotation created by the folks working on Lombok. Using this annotation enables us to throw a checked exception without forcing the caller to catch that exception. 
@@ -34,6 +37,8 @@ public void doSomethingSneakily() {
     readFile();
 }
 ```
+
+<br />
 
 ## How does it work under the hood?
 
@@ -110,7 +115,7 @@ It is quite a bit cleaner that way and as we'll cover later on, using the `@Snea
 
 ## So what's the Catch?
 
-Because of how java works, we cannot have a catch block that catches a checked exception that a method doesn't say it might throw. Sorry for all the negatives in a row there.  
+Because of how java works, we cannot have a catch block that catches a checked exception that a method doesn't say it might throw. That's a lot of negatives in a row. Sorry. 
 
 For example, if we do
 

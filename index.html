@@ -1,22 +1,4 @@
 ---
-layout: default
+layout: home
 ---
 
-<div class="posts">
-  {% for post in site.posts %}
-    <article class="post">
-
-      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
-
-      <div class="entry">
-        {% if post.description %}
-          {{ post.description }}
-        {% else %}
-          {{ post.excerpt }}
-        {% endif %}
-      </div>
-
-      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
-    </article>
-  {% endfor %}
-</div>

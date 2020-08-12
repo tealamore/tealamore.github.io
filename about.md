@@ -1,10 +1,11 @@
 ---
 layout: page
-title: About
-permalink: /about/
+title: About me
+cover-img: /assets/img/mark-basarab-1OtUkD_8svc-unsplash.jpg
+share-img: /assets/img/mark-basarab-1OtUkD_8svc-unsplash.jpg
 ---
 
-As you can see from the bar above, my name is Brad. I am a full-stack consultant.
+As you can see from the bar above, my name is Brad and I'm a full-stack consultant.
 
 ### Contact me
 

@@ -1,6 +1,9 @@
 ---
 layout: neo4j
 title: Optimal where clause in Neo4j
+cover-img: /assets/img/where-clause.jpg
+share-img: /assets/img/where-clause.jpg
+tags: [db, neo4j]
 ---
 
 This should be a fairly short post but I’m hoping that by writing it down, I’ll stop googling this same question every time I’m reviewing a pull request that involves a neo4j query.
@@ -9,10 +12,10 @@ There are two ways to do a basic `WHERE` clause in Cypher:
 
 ```sql
 SELECT (p:Person)
-WHERE p.name="Brad"
+WHERE p.name = "Brad"
 RETURN p;
 
-SELECT (p:Person {name: "Brad"})
+SELECT (p:Person { name: "Brad" })
 RETURN p;
 ```
 
