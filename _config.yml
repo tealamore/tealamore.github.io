@@ -6,7 +6,7 @@ subtitle: Full-stack consultant
 title-img: /favicon.ico
 
 # Short description of your site
-description: A virtual proof that I'm awesome
+#description: A virtual proof that I'm awesome
 
 # Your name to show in the footer
 author: Brad Arvin
@@ -15,6 +15,7 @@ author: Brad Arvin
 
 navbar-links:
   Blog: "/"
+  Hire me: "hire/"
   About Me: "about/"
 
 # --- Logo --- #
