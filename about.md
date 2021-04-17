@@ -9,4 +9,4 @@ As you can see from the bar above, my name is Teal and I'm a full-stack consulta
 
 ### Contact me
 
-[me@bradarvin.com](mailto:me@bradarvin.com)
+[Email me](mailto:me@bradarvin.com)
