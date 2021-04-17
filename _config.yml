@@ -1,7 +1,7 @@
 # --- Basic options --- #
 
 # Name of website
-title: Brad Arvin
+title: Teal Arvin
 subtitle: Full-stack consultant
 title-img: /favicon.ico
 
@@ -9,7 +9,7 @@ title-img: /favicon.ico
 #description: A virtual proof that I'm awesome
 
 # Your name to show in the footer
-author: Brad Arvin
+author: Teal Arvin
 
 # --- List of links in the navigation bar --- #
 
@@ -72,7 +72,7 @@ share-links-active:
 
 # How to display the link to your website in the footer
 # Remove this if you don't want a link in the footer
-url-pretty: "BradArvin.com"
+url-pretty: "TealArvin.com"
 
 # Create a "tags" index page and make tags on each post clickable
 link-tags: true

@@ -7,7 +7,7 @@ share-img: /assets/img/sergei-akulich--heLWtuAN3c-unsplash.jpg
 tags: [javascript, ES6, regex]
 ---
 
-We're back for round two of regular expressions in javascript. If you haven't see my post already about using [regular expressions with unicode in ES6](https://www.bradarvin.com/ES6-Regex-Unicode/), you should check it out. I thought it was really interesting, but I guess you don't have to like it if you really don't want to. In this post, we'll be discussing the sticky flag (y), which was also introduced in ES6.
+We're back for round two of regular expressions in javascript. If you haven't see my post already about using [regular expressions with unicode in ES6](https://www.tealarvin.com/ES6-Regex-Unicode/), you should check it out. I thought it was really interesting, but I guess you don't have to like it if you really don't want to. In this post, we'll be discussing the sticky flag (y), which was also introduced in ES6.
 
 ## How it works
 
