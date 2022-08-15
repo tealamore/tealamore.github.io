@@ -39,10 +39,9 @@ round-avatar: true
 # If you don't want to show a link to an RSS feed, set rss to "false".
 social-network-links:
   email: "me@tealarvin.com"
-  github: bradarv90
-  linkedin: bradley-arvin
+  github: tealarvin
+  linkedin: teal-arvin
   twitter: TealArvin
-  stackoverflow: 962178/brad
 #  reddit: yourname
 #  linkedin: daattali
 #  xing: yourname
