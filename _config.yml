@@ -1,7 +1,7 @@
 # --- Basic options --- #
 
 # Name of website
-title: Teal Arvin
+title: Teal Amore
 subtitle: Full-stack consultant
 title-img: /favicon.ico
 
@@ -9,13 +9,12 @@ title-img: /favicon.ico
 #description: A virtual proof that I'm awesome
 
 # Your name to show in the footer
-author: Teal Arvin
+author: Teal Amore
 
 # --- List of links in the navigation bar --- #
 
 navbar-links:
   Blog: "/"
-  Hire me: "hire/"
   About Me: "about/"
 
 # --- Logo --- #
@@ -38,10 +37,9 @@ round-avatar: true
 # Uncomment the links you want to show and add your information to each one.
 # If you don't want to show a link to an RSS feed, set rss to "false".
 social-network-links:
-  email: "me@tealarvin.com"
-  github: tealarvin
-  linkedin: teal-arvin
-  twitter: TealArvin
+  email: "me@tealamore.com"
+  github: tealamore
+  linkedin: teal-amore
 #  reddit: yourname
 #  linkedin: daattali
 #  xing: yourname
@@ -71,7 +69,7 @@ share-links-active:
 
 # How to display the link to your website in the footer
 # Remove this if you don't want a link in the footer
-url-pretty: "TealArvin.com"
+url-pretty: "TealAmore.com"
 
 # Create a "tags" index page and make tags on each post clickable
 link-tags: true
