@@ -1,5 +1,6 @@
 # Define standard eol format
 
+* text=auto
 # Web Files
 *.html text eol=lf
 *.md text eol=lf
