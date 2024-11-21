@@ -8,7 +8,7 @@ tags: [primes]
 mathjax: true
 ---
 
-As we've already discussed, prime factorization is cool, but highly inefficient when it comes to determining if an extremely large number is prime. So here comes a intro discussion about the Solovay-Strassen primality test.
+As we've already discussed, prime factorization is cool, but highly inefficient when it comes to determining if an extremely large number is prime. So here comes an introduction about the Solovay-Strassen primality test.
 
 That looks fancy, but bear with me, I'm gonna break this down really small so it's easier to understand.
 
@@ -34,4 +34,4 @@ There will be posts after this where we dig into the math of this and explore wh
 
 This is called a probabilistic algorithm meaning that statistically speaking, if it says $$n$$ is prime, there's a very high likelihood it is, but that's not a guarantee. Most algorithms you interact with will be 100% accurate when with it's output. But for this one, you can pass in the same value of $$n$$ multiple times and get different results due to the randomness of it.
 
-Obviously it would be great if we could use a deterministic algorithm, but the deterministic versions are highly inefficient compared to probabilistic ones, like this. Like I said before, with this problem, we have trade-offs of complexity and certainty. And we're going to explore and understand those trade-offs more as this series continues. 
+Obviously it would be great if we could use a deterministic algorithm, but the deterministic versions are highly inefficient compared to probabilistic ones, like this. Like I said before, with this problem, we have trade-offs of complexity and certainty. And we're going to explore and understand those trade-offs more as this series continues.
