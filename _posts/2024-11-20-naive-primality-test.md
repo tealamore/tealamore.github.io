@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Naive Primality Testing
-excerpt:
+excerpt: In cryptography, we use large probably prime numbers to encrypt traffic. But how do we know if a large number is prime?
 cover-img: /assets/img/veeterzy-sMQiL_2v4vs-unsplash.jpg
 share-img: /assets/img/veeterzy-sMQiL_2v4vs-unsplash.jpg
 tags: [primes]
