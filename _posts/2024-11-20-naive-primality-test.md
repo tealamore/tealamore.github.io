@@ -4,7 +4,7 @@ title: Naive Primality Testing
 excerpt: In cryptography, we use large probably prime numbers to encrypt traffic. But how do we know if a large number is prime?
 cover-img: /assets/img/veeterzy-sMQiL_2v4vs-unsplash.jpg
 share-img: /assets/img/veeterzy-sMQiL_2v4vs-unsplash.jpg
-tags: [primes]
+tags: [primes, algorithms]
 ---
 
 In cryptography, we use probably prime numbers to encrypt traffic. There are definitely reasons why we do so, but this is not a blog post talking about why we use prime numbers.
