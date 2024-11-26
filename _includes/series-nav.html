@@ -1,0 +1,15 @@
+{% if page.series %}
+{% assign series = site.data.series[page.series] %}
+<div class="series-nav">
+    <h2>{{ series.title }}</h2>
+    <ul>
+        {% for post in series.posts %}
+        <li>
+            <a href="{{ post.url }}" {% if page.title==post.title %}class="current" {% endif %}>
+                {{ post.title }}
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}

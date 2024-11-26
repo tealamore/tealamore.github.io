@@ -1,5 +1,6 @@
 ---
-layout: post
+layout: series
+series: solovay-strassen
 title: Quadratic Residues
 excerpt: Why don't quadratic residues like to brag? Because they're too mod-est
 cover-img: /assets/img/veeterzy-sMQiL_2v4vs-unsplash.jpg

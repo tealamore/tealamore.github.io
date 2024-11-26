@@ -1,0 +1,53 @@
+---
+layout: post
+---
+
+<style>
+    .series-nav {
+        background-color: #f8f9fa;
+        border: 1px solid #e9ecef;
+        border-radius: 8px;
+        padding: 20px;
+        margin: 20px 0;
+    }
+
+    .series-nav h2 {
+        font-size: 1.2em;
+        margin: 0 0 15px 0;
+        color: #212529;
+    }
+
+    .series-nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .series-nav li {
+        margin: 8px 0;
+        padding: 0;
+    }
+
+    .series-nav a {
+        color: #0366d6;
+        text-decoration: none;
+        transition: color 0.2s ease;
+    }
+
+    .series-nav a:hover {
+        color: #0056b3;
+        text-decoration: underline;
+    }
+
+    .series-nav .current {
+        font-weight: bold;
+        color: #24292e;
+    }
+
+    .series-nav .current::before {
+        content: "→ ";
+        color: #6c757d;
+    }
+</style>
+{% include series-nav.html %}
+{{ content }}

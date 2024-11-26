@@ -1,5 +1,6 @@
 ---
-layout: post
+layout: series
+series: solovay-strassen
 title: Euler's Criterion
 excerpt:
 cover-img: /assets/img/veeterzy-sMQiL_2v4vs-unsplash.jpg

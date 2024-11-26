@@ -1,5 +1,6 @@
 ---
-layout: post
+layout: series
+series: solovay-strassen
 title: Modular Arithmetic
 excerpt:
 cover-img: /assets/img/veeterzy-sMQiL_2v4vs-unsplash.jpg

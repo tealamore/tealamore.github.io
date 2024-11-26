@@ -1,5 +1,6 @@
 ---
-layout: post
+layout: series
+series: solovay-strassen
 title: Solovay-Strassen Revisited
 excerpt:
 cover-img: /assets/img/veeterzy-sMQiL_2v4vs-unsplash.jpg
@@ -29,6 +30,7 @@ def is_prime(n, iterations):
 
 1. Pseudoprime control: By running this test numerous times, we can reduce the risk of a pseudoprime sneaking through.
 2. For each random value `a`, we see if
+
 - `x == 0`: is `n` divisible by `a`? If yes, then `n` is composite
 - `x % n != y % n`: Does Euler's criterion hold? If not, `n` is composite
   - side note: We use `x % n` to handle negative Jacobi symbol values by converting them to their positive equivalents.
