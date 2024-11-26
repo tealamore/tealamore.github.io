@@ -3,8 +3,8 @@ layout: series
 series: solovay-strassen
 title: Modular Arithmetic
 excerpt:
-cover-img: /assets/img/veeterzy-sMQiL_2v4vs-unsplash.jpg
-share-img: /assets/img/veeterzy-sMQiL_2v4vs-unsplash.jpg
+cover-img: /assets/img/inyoung-jung-C3oks96EH34-unsplash.jpg
+share-img: /assets/img/inyoung-jung-C3oks96EH34-unsplash.jpg
 tags: [primes, algorithms]
 ---
 

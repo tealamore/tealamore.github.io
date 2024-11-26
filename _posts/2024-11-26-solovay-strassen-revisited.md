@@ -3,8 +3,8 @@ layout: series
 series: solovay-strassen
 title: Solovay-Strassen Revisited
 excerpt:
-cover-img: /assets/img/veeterzy-sMQiL_2v4vs-unsplash.jpg
-share-img: /assets/img/veeterzy-sMQiL_2v4vs-unsplash.jpg
+cover-img: /assets/img/anna-mould-Zck1ap7muew-unsplash.jpg
+share-img: /assets/img/anna-mould-Zck1ap7muew-unsplash.jpg
 tags: [primes, algorithms]
 ---
 

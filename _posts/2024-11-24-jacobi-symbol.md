@@ -3,8 +3,8 @@ layout: series
 series: solovay-strassen
 title: Jacobi Symbol
 excerpt:
-cover-img: /assets/img/veeterzy-sMQiL_2v4vs-unsplash.jpg
-share-img: /assets/img/veeterzy-sMQiL_2v4vs-unsplash.jpg
+cover-img: /assets/img/clay-leconey-aTU7-rYuRc4-unsplash.jpg
+share-img: /assets/img/clay-leconey-aTU7-rYuRc4-unsplash.jpg
 tags: [primes, algorithms]
 ---
 

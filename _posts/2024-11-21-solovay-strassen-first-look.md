@@ -3,8 +3,8 @@ layout: series
 series: solovay-strassen
 title: A First Look at Solovay-Strassen Primality Test
 excerpt:
-cover-img: /assets/img/veeterzy-sMQiL_2v4vs-unsplash.jpg
-share-img: /assets/img/veeterzy-sMQiL_2v4vs-unsplash.jpg
+cover-img: /assets/img/matt-howard-GH7fPDHnJyw-unsplash.jpg
+share-img: /assets/img/matt-howard-GH7fPDHnJyw-unsplash.jpg
 tags: [primes, algorithms]
 mathjax: true
 ---

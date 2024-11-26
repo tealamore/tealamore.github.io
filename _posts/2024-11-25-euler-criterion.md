@@ -3,8 +3,8 @@ layout: series
 series: solovay-strassen
 title: Euler's Criterion
 excerpt:
-cover-img: /assets/img/veeterzy-sMQiL_2v4vs-unsplash.jpg
-share-img: /assets/img/veeterzy-sMQiL_2v4vs-unsplash.jpg
+cover-img: /assets/img/sharon-pittaway-4_hFxTsmaO4-unsplash.jpg
+share-img: /assets/img/sharon-pittaway-4_hFxTsmaO4-unsplash.jpg
 tags: [primes, algorithms]
 ---
 
