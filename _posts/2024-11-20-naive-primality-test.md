@@ -26,7 +26,7 @@ def isPrime(n):
     return "prime"
 ```
 
-Look, does it work? Yes but only barely. When we're talking about a number that's 1000-digits long, this would take forever to finish.
+Look, does it work? Yes but only barely. When we're talking about a number that's a 1000-digits long, this would take forever to finish.
 
 ## Brute force but slightly improved
 
