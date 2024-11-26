@@ -107,7 +107,7 @@ def jacobi(q, n):
     while q > 0:
         # extract all the factors of 2 from q
         while q % 2 == 0:
-            q = q / 2
+            q = q // 2
             # applying the rule about (2/n)
             # we only care about the case of -1, since 1 have no impact on the result
             if n % 8 in [3,5]:
@@ -128,4 +128,4 @@ If we check `jacobi(4783, 6113)` we get $$1$$. So this code works. Hopefully the
 
 Before you accuse me of cheating, I wrote the code after I did the practice problem.
 
-We finally have an efficient way of calculating quadratic residues, but how does that play into testing if a number is prime? 
+We finally have an efficient way of calculating quadratic residues, but how does that play into testing if a number is prime?

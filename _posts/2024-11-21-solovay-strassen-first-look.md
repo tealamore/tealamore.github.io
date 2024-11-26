@@ -17,11 +17,11 @@ That looks fancy, but bear with me, I'm gonna break this down really small so it
 If you google this test, you'll see something like this. Though I'll be nice and slightly clean it up
 
 <pre><code>
-def isPrime(n, iterations):
+def is_prime(n, iterations):
     for i in range(iterations):
         a = random(2, n-1)
         x = <img src="/assets/img/solovay-strassen-first-look/jacobi.png" alt="Jacobi Symbol of a/n" style="display: inline-block; vertical-align: middle;">
-        if x=0 or <img src="/assets/img/solovay-strassen-first-look/check.png" alt="a raised to n minus 1 over 2 is not congruent to x modulo n" style="display: inline-block; vertical-align: middle;">:
+        if x == 0 or <img src="/assets/img/solovay-strassen-first-look/check.png" alt="a raised to n minus 1 over 2 is not congruent to x modulo n" style="display: inline-block; vertical-align: middle;">:
             return "composite"
     return "probably prime"
 </code></pre>
