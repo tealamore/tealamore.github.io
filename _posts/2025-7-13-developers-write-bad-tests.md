@@ -2,6 +2,7 @@
 layout: post
 title: Developers Write Bad Unit Tests
 headsup: Just so you know, clicking underlined text will display more information 
+excerpt: All too often, developers will practice what I like to call DDT aka Development-driven testing — the inverse of TDD. I promise this won't be a TDD-advocacy post because frankly I can't handle getting that much hate today. 
 cover-img: /assets/img/anna-mould-Zck1ap7muew-unsplash.jpg
 share-img: /assets/img/anna-mould-Zck1ap7muew-unsplash.jpg
 tags: [testing]
@@ -55,7 +56,7 @@ Dynamic checks involve testing the tests themselves. While there are many great 
 
 Statically though, that's the stuff we can all implement today. Here are some static checks that can help you spot if your tests are actually doing anything useful: 
 
-1. <div class='expanderLink' onclick='expandoLink("githubTestPilot")'>calls the function-under-test (FUT)<div id='githubTestPilot' class='invisible'>Looking at you, [Github TestPilot Section 4.3](https://arxiv.org/pdf/2302.06527)</div></div>
+1. <div class='expanderLink' onclick='expandoLink("githubTestPilot")'>calls the function-under-test (FUT)<div id='githubTestPilot' class='invisible'>Looking at you, <a href="https://arxiv.org/pdf/2302.06527" target="_blank" rel="noopener noreferrer">Github TestPilot Section 4.3</a></div></div>
 2. fails if the FUT's behavior changes
 3. avoids loose matchers as much as possible — like `any()` 
 4. is deterministic. Meaning the tests don't rely on randomness or branching logic
