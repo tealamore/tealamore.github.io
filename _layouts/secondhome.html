@@ -40,6 +40,9 @@ layout: page
           {% endcapture %}
           {% assign thumbnail=thumbnail | strip %}
           {% if thumbnail != "" %}
+            <div class="post-thumbnail">
+                <img src="{{ thumbnail | absolute_url }}" alt="Thumbnail for {{ post.title }}">
+            </div>
           {% endif %}
           <div class="post-entry">
             {% assign excerpt_length = site.excerpt_length | default: 50 %}
