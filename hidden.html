@@ -1,28 +1,5 @@
 ---
-layout: page
-title: Hidden Feed
+layout: secondpage
 permalink: /hidden/
 ---
 
-<h1>Hidden Posts</h1>
-
-<div class="posts-list">
-  {% for post in site.posts %}
-    {% if post.hidden %}
-      <article class="post-preview">
-        <a href="{{ post.url | absolute_url }}">
-          <h2 class="post-title">{{ post.title }}</h2>
-        </a>
-        <p class="post-meta">
-          {% assign date_format = site.date_format | default: "%B %-d, %Y" %}
-          Posted on {{ post.date | date: date_format }}
-        </p>
-        <div class="post-entry">
-          {% assign excerpt_length = site.excerpt_length | default: 50 %}
-          {{ post.excerpt | strip_html | xml_escape | truncatewords: excerpt_length }}
-          <a href="{{ post.url | absolute_url }}" class="post-read-more">[Read&nbsp;More]</a>
-        </div>
-      </article>
-    {% endif %}
-  {% endfor %}
-</div>
