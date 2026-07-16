@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://tealamore.com/sitemap.xml
+Sitemap: https://tealamore.github.io/sitemap.xml
