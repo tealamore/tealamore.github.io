@@ -1,5 +1,5 @@
 ---
-layout: neo4j
+layout: post
 title: Optimal where clause in Neo4j
 cover-img: /assets/img/where-clause.jpg
 share-img: /assets/img/where-clause.jpg
