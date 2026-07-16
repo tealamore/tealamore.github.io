@@ -1,0 +1,76 @@
+<!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> Quadratic Residues | Teal Amore </title> <meta name="author" content="Teal Amore"> <meta name="description" content=""> <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website"> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <style>
+  :root {
+    --max-content-width: 930px;
+  }
+</style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="stylesheet" href="/assets/css/main.css?v=f0b101217084a90093badfe99ff9a7d1"> <link rel="canonical" href="https://tealamore.com/blog/2024/quadratic-residues/"> <script src="/assets/js/theme.js?v=7af685e2ba20b37fef545c97b8064050"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
+    initTheme();
+  </script> <script defer src="/expander.js"></script> <style>
+      .expanderLink {
+        text-decoration: underline;
+        display: inline;
+        margin: 0;
+      }
+
+      .invisible {
+        visibility: hidden;
+        height: 1px;
+      }
+    </style> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> <span class="font-weight-bold">Teal</span> Amore </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item active"> <a class="nav-link" href="/blog/">blog </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">publications </a> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">Quadratic Residues</h1> <p class="post-meta"> Created on November 23, 2024 </p> <p class="post-tags"> <a href="/blog/2024"> <i class="fa-solid fa-calendar fa-sm"></i> 2024 </a>   ·   <a href="/blog/tag/primes"> <i class="fa-solid fa-hashtag fa-sm"></i> primes</a>   <a href="/blog/tag/algorithms"> <i class="fa-solid fa-hashtag fa-sm"></i> algorithms</a> </p> </header> <article class="post-content"> <div id="markdown-content"> <style>
+    .series-nav {
+        background-color: #f8f9fa;
+        border: 1px solid #e9ecef;
+        border-radius: 8px;
+        padding: 20px;
+        margin: 20px 0;
+    }
+
+    .series-nav h2 {
+        font-size: 1.2em;
+        margin: 0 0 15px 0;
+        color: #212529;
+    }
+
+    .series-nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .series-nav li {
+        margin: 8px 0;
+        padding: 0;
+    }
+
+    .series-nav a {
+        color: #0366d6;
+        text-decoration: none;
+        transition: color 0.2s ease;
+    }
+
+    .series-nav a:hover {
+        color: #0056b3;
+        text-decoration: underline;
+    }
+
+    .series-nav .current {
+        font-weight: bold;
+        color: #24292e;
+    }
+
+    .series-nav .current::before {
+        content: "→ ";
+        color: #6c757d;
+    }
+</style> <div class="series-nav"> <h2>Solovay-Strassen Primality Test Series</h2> <ul> <li> <a href="/blog/2024/naive-primality-test"> Naive Primality Testing </a> </li> <li> <a href="/blog/2024/solovay-strassen-first-look"> A First Look at Solovay-Strassen Primality Test </a> </li> <li> <a href="/blog/2024/modular-arithmetic"> Modular Arithmetic </a> </li> <li> <a href="/blog/2024/quadratic-residues" class="current"> Quadratic Residues </a> </li> <li> <a href="/blog/2024/jacobi-symbol"> Jacobi Symbol </a> </li> <li> <a href="/blog/2024/euler-criterion"> Euler's Criterion </a> </li> <li> <a href="/blog/2024/solovay-strassen-revisited"> Solovay-Strassen Revisited </a> </li> </ul> </div> <p>Quadratic residues have lots of interesting uses across technology, but like with the rest of this series, we are just focusing on what it is and it’s specific application to primality testing.</p> <h2 id="definitions">Definitions</h2> <p>The definition is, not so, simply that integer \(q\) is congruent to a perfect square modulo \(n\). Written out in more mathy ways, that’s</p> \[x^2 \equiv q\ (mod\ n)\] <p>On the contrary though, if \(q\) doesn’t meet this condition, then it’s considered a quadratic nonresidue.</p> <h2 id="less-definitionally">Less Definitionally</h2> <p>Here’s a naive approach to checking if \(q\) is a quadratic residue or nonresidue of \(n\).</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">is_residue</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="n">residues</span> <span class="o">=</span> <span class="nf">set</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span> <span class="c1"># aka iterating over the values 1 ... n-1
+</span>	    <span class="n">residues</span><span class="p">.</span><span class="nf">add</span><span class="p">((</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">%</span> <span class="n">n</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">q</span> <span class="ow">in</span> <span class="n">residues</span>
+</code></pre></div></div> <p>While this code does work, it has some issues. For one and this is just how I implemented it, whenever you want to check a new value of \(q\), you have to recompute all the residues, which is just wasteful if you’re going to be checking a lot of values.</p> <p>But the bigger issue here, is that we’re thinking about extremely large values of \(n\).</p> <p>Let’s think about just how much memory it would take to hold all these residues. Assuming we write this code super efficiently and use the least amount of bits possible to store each residue, they would have a size of between 1 to 1000 bits for a number \(n\) on the order of \(2^{1000}\) so assuming even distribution, that would be 500 bits per residue. And given that we can expect there to be \(\frac{n}{2}\) unique residues for \(n\), that means we should have \(2^{999}\) distinct residues. In total, we can expect \(500*2^{999}\) bits or \(3.3*10^{284}\) exabytes for each value of \(n\).</p> <p>So yeah, this solution clearly won’t work for large values, but I wonder if there’s a better way.</p> </div> </article> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Teal Amore. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. Photos from <a href="https://unsplash.com" target="_blank" rel="external nofollow noopener">Unsplash</a>. </div> </footer> <script>
+  window.alFolio = {
+    compatBootstrap: false
+  };
+</script> <script src="/assets/js/nav-toggle.js?v=141bd79a73ebc0f0b6ea58e440ae79fc"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/assets/js/masonry.js?v=e49affc7bd2646f6acdad1dbe02c2359" type="text/javascript"></script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script> <script src="/assets/al_math/js/mathjax-setup.js"></script> <script defer src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6" crossorigin="anonymous"></script> <script src="/assets/js/tooltips-setup.js?v=fe487e99db6c43751e6e7bdb2d6a0611"></script> <script src="/assets/js/no_defer.js?v=53b1b1a645525975c963ce8bf8bfefcf"></script> <script defer src="/assets/js/common.js?v=87baac90f765f2f3362dcf6aaf312a8a"></script> <script defer src="/assets/js/copy_code.js?v=c8a01c11a92744d44b093fc3bda915df" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js?v=896d254890d9b47f0281f63bfccf0dee"></script> <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script> <script async src="https://badge.dimensions.ai/badge.js"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/al_img_tools/js/zoom.js"></script> <script defer src="/assets/js/progress-bar.js?v=499464c5c63ced6cf7ad62509f1e2610" type="text/javascript"></script> <script src="https://cdn.jsdelivr.net/npm/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js" integrity="sha256-uMJJ3EoTyfRBoTbR+lrfu1uRQ87RZG8AR3cVNuQVeFg=" crossorigin="anonymous"></script> <script>
+    addBackToTop();
+  </script> </body> </html>

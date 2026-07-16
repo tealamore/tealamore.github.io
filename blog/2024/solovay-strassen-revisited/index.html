@@ -1,0 +1,118 @@
+<!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> Solovay-Strassen Revisited | Teal Amore </title> <meta name="author" content="Teal Amore"> <meta name="description" content=""> <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website"> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <style>
+  :root {
+    --max-content-width: 930px;
+  }
+</style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="stylesheet" href="/assets/css/main.css?v=f0b101217084a90093badfe99ff9a7d1"> <link rel="canonical" href="https://tealamore.com/blog/2024/solovay-strassen-revisited/"> <script src="/assets/js/theme.js?v=7af685e2ba20b37fef545c97b8064050"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
+    initTheme();
+  </script> <script defer src="/expander.js"></script> <style>
+      .expanderLink {
+        text-decoration: underline;
+        display: inline;
+        margin: 0;
+      }
+
+      .invisible {
+        visibility: hidden;
+        height: 1px;
+      }
+    </style> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> <span class="font-weight-bold">Teal</span> Amore </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item active"> <a class="nav-link" href="/blog/">blog </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">publications </a> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">Solovay-Strassen Revisited</h1> <p class="post-meta"> Created on November 26, 2024 </p> <p class="post-tags"> <a href="/blog/2024"> <i class="fa-solid fa-calendar fa-sm"></i> 2024 </a>   ·   <a href="/blog/tag/primes"> <i class="fa-solid fa-hashtag fa-sm"></i> primes</a>   <a href="/blog/tag/algorithms"> <i class="fa-solid fa-hashtag fa-sm"></i> algorithms</a> </p> </header> <article class="post-content"> <div id="markdown-content"> <style>
+    .series-nav {
+        background-color: #f8f9fa;
+        border: 1px solid #e9ecef;
+        border-radius: 8px;
+        padding: 20px;
+        margin: 20px 0;
+    }
+
+    .series-nav h2 {
+        font-size: 1.2em;
+        margin: 0 0 15px 0;
+        color: #212529;
+    }
+
+    .series-nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .series-nav li {
+        margin: 8px 0;
+        padding: 0;
+    }
+
+    .series-nav a {
+        color: #0366d6;
+        text-decoration: none;
+        transition: color 0.2s ease;
+    }
+
+    .series-nav a:hover {
+        color: #0056b3;
+        text-decoration: underline;
+    }
+
+    .series-nav .current {
+        font-weight: bold;
+        color: #24292e;
+    }
+
+    .series-nav .current::before {
+        content: "→ ";
+        color: #6c757d;
+    }
+</style> <div class="series-nav"> <h2>Solovay-Strassen Primality Test Series</h2> <ul> <li> <a href="/blog/2024/naive-primality-test"> Naive Primality Testing </a> </li> <li> <a href="/blog/2024/solovay-strassen-first-look"> A First Look at Solovay-Strassen Primality Test </a> </li> <li> <a href="/blog/2024/modular-arithmetic"> Modular Arithmetic </a> </li> <li> <a href="/blog/2024/quadratic-residues"> Quadratic Residues </a> </li> <li> <a href="/blog/2024/jacobi-symbol"> Jacobi Symbol </a> </li> <li> <a href="/blog/2024/euler-criterion"> Euler's Criterion </a> </li> <li> <a href="/blog/2024/solovay-strassen-revisited" class="current"> Solovay-Strassen Revisited </a> </li> </ul> </div> <p>After deep diving into quadratic residues and Euler’s Criterion and such, now we can finally just write some code.</p> <p>As mentioned in the previous post, there are pseudoprimes that can satisfy Euler’s Criterion. Our way of combatting them is by trying a wide variety of values to check if \(n\) is prime.</p> <h2 id="lets-explain-the-code">Let’s explain the code</h2> <p>Going back to the <a href="https://www.tealamore.com/solovay-strassen-first-look/" rel="external nofollow noopener" target="_blank">First Look</a> post, we have this chunk of somewhat code stuff</p> <pre><code>
+def is_prime(n, iterations):
+    for i in range(iterations):
+        a = random(2, n-1)
+        x = <img src="/assets/img/solovay-strassen-first-look/jacobi.png" alt="Jacobi Symbol of a/n" style="display: inline-block; vertical-align: middle;">
+        if x == 0 or <img src="/assets/img/solovay-strassen-first-look/check.png" alt="a raised to n minus 1 over 2 is not congruent to x modulo n" style="display: inline-block; vertical-align: middle;">:
+            return "composite"
+    return "probably prime"
+</code></pre> <h2 id="understanding-each-step">Understanding each step</h2> <ol> <li>Pseudoprime control: By running this test numerous times, we can reduce the risk of a pseudoprime sneaking through.</li> <li>For each random value <code class="language-plaintext highlighter-rouge">a</code>, we see if</li> </ol> <ul> <li> <code class="language-plaintext highlighter-rouge">x == 0</code>: is <code class="language-plaintext highlighter-rouge">n</code> divisible by <code class="language-plaintext highlighter-rouge">a</code>? If yes, then <code class="language-plaintext highlighter-rouge">n</code> is composite</li> <li> <code class="language-plaintext highlighter-rouge">x % n != y % n</code>: Does Euler’s criterion hold? If not, <code class="language-plaintext highlighter-rouge">n</code> is composite <ul> <li>side note: We use <code class="language-plaintext highlighter-rouge">x % n</code> to handle negative Jacobi symbol values by converting them to their positive equivalents.</li> </ul> </li> </ul> <h2 id="finally-lets-write-some-code">Finally, let’s write some code</h2> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">random</span> <span class="kn">import</span> <span class="n">randint</span>
+
+<span class="c1"># I copied this from the jacobi post
+</span><span class="k">def</span> <span class="nf">jacobi</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="n">q</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="c1"># base case of when n is a multiple of q
+</span>        <span class="k">return</span> <span class="mi">0</span>
+
+    <span class="n">result</span> <span class="o">=</span> <span class="mi">1</span>
+
+    <span class="k">while</span> <span class="n">q</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="c1"># extract all the factors of 2 from q
+</span>        <span class="k">while</span> <span class="n">q</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">q</span> <span class="o">=</span> <span class="n">q</span> <span class="o">//</span> <span class="mi">2</span>
+            <span class="c1"># applying the rule about (2/n)
+</span>            <span class="c1"># we only care about the case of -1, since 1 have no impact on the result
+</span>            <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">8</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">]:</span>
+                <span class="n">result</span> <span class="o">*=</span> <span class="o">-</span><span class="mi">1</span>
+
+        <span class="c1"># quadratic reciprocity aka flipping the numbers and flipping the sign if needed
+</span>        <span class="k">if</span> <span class="n">q</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+            <span class="n">q</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="n">n</span><span class="p">,</span> <span class="n">q</span>
+            <span class="k">if</span> <span class="n">q</span> <span class="o">%</span> <span class="mi">4</span> <span class="o">==</span> <span class="mi">3</span> <span class="ow">and</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">4</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+                <span class="n">result</span> <span class="o">*=</span> <span class="o">-</span><span class="mi">1</span>
+
+        <span class="n">q</span> <span class="o">=</span> <span class="n">q</span> <span class="o">%</span> <span class="n">n</span>
+
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="k">def</span> <span class="nf">is_prime</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">iterations</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="n">iterations</span><span class="p">):</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="nf">randint</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="n">x</span> <span class="o">=</span> <span class="nf">jacobi</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="nf">pow</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span> <span class="c1"># this is that modular exponentiation i mentioned
+</span>
+        <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">x</span> <span class="o">%</span> <span class="n">n</span> <span class="o">!=</span> <span class="n">y</span> <span class="o">%</span> <span class="n">n</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">False</span>
+
+    <span class="k">return</span> <span class="bp">True</span>
+</code></pre></div></div> <p>And just like that, we understand and have implemented Solovay-Strassen. Try it out. For composite numbers, it’ll generally figure out they’re composite quickly and for prime numbers, it’ll always say they’re prime. Cool, right?</p> <h2 id="tradeoffs">Tradeoffs</h2> <p>As I said at the start of this series, there are trade-offs when it comes to complexity and levels of certainty. Since we had to write multiple blog posts just breaking down the high-level version of the math, I think we can all agree this is complex.</p> <p>But what about with levels of certainity.</p> <ul> <li>If it returns False, the number is definitely composite</li> <li>If the number is prime, it’ll definitely return True</li> <li>If it returns True, the number might be composite (but probably isn’t)</li> </ul> <p>But really, what are the odds the third case will happen?</p> <p>The worst case odds of a composite number being thought to be prime is \(\frac{1}{2^k}\) where \(k\) is the number of iterations performed. So obviously the more iterations we do, the odds of a false positive drastically decrease. Just 20 iterations puts the odds at 1 in a million.</p> <p>Even though this is a rather small error rate, this isn’t actually the least error-prone primality testing algorithm out there and hopefully soon, we can deep dive into those too.</p> </div> </article> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Teal Amore. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. Photos from <a href="https://unsplash.com" target="_blank" rel="external nofollow noopener">Unsplash</a>. </div> </footer> <script>
+  window.alFolio = {
+    compatBootstrap: false
+  };
+</script> <script src="/assets/js/nav-toggle.js?v=141bd79a73ebc0f0b6ea58e440ae79fc"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/assets/js/masonry.js?v=e49affc7bd2646f6acdad1dbe02c2359" type="text/javascript"></script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script> <script src="/assets/al_math/js/mathjax-setup.js"></script> <script defer src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6" crossorigin="anonymous"></script> <script src="/assets/js/tooltips-setup.js?v=fe487e99db6c43751e6e7bdb2d6a0611"></script> <script src="/assets/js/no_defer.js?v=53b1b1a645525975c963ce8bf8bfefcf"></script> <script defer src="/assets/js/common.js?v=87baac90f765f2f3362dcf6aaf312a8a"></script> <script defer src="/assets/js/copy_code.js?v=c8a01c11a92744d44b093fc3bda915df" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js?v=896d254890d9b47f0281f63bfccf0dee"></script> <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script> <script async src="https://badge.dimensions.ai/badge.js"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/al_img_tools/js/zoom.js"></script> <script defer src="/assets/js/progress-bar.js?v=499464c5c63ced6cf7ad62509f1e2610" type="text/javascript"></script> <script src="https://cdn.jsdelivr.net/npm/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js" integrity="sha256-uMJJ3EoTyfRBoTbR+lrfu1uRQ87RZG8AR3cVNuQVeFg=" crossorigin="anonymous"></script> <script>
+    addBackToTop();
+  </script> </body> </html>
